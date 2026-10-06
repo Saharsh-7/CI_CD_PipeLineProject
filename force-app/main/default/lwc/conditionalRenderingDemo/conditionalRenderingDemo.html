@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title = "Conditional Rendering Using for:each directives">
+
+        <template if:true={patientList.data}>
+                    <template for:each={patientList.data} for:item="item">
+                        <div key={item.Id}>Name : {item.Name}</div>
+                        <div key={item.Id}>First Name : {item.First_Name__c}</div>
+                        <div key={item.Id}>Last Name : {item.Last_Name__c}</div>
+                        <div key={item.Id}>Email : {item.Email__c}</div>
+                        <div key={item.Id}>Phone : {item.Phone__c}</div>
+                    </template>
+        </template>
+        <template if:true={patientList.error}>
+            <p> Error : {patientList.error} </p>
+        </template>
+        
+    </lightning-card>
+</template>

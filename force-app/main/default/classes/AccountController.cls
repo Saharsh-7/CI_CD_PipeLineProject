@@ -10,10 +10,10 @@
 public with sharing class AccountController {
     
     @AuraEnabled (cacheable=true)
-    public static List<Case> getRelatedCases(){
+    public static List<Case> getRelatedCases(Id accountId){
 
         List<Case> relatedCases = [SELECT Id, CaseNumber, Subject, AccountId, Origin, Account.Name, Account.Id FROM CASE
-                                    WHERE AccountId != NULL AND Subject != NULL AND Origin != NULL
+                                    WHERE AccountId =: accountId AND Subject != NULL AND Origin != NULL
                                     ORDER BY Account.Name
                                 ];
 

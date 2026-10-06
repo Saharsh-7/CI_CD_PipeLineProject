@@ -1,0 +1,16 @@
+<template>
+    <lightning-card style="height:200px;" title = "if: true and false directive demo">
+        <lightning-button label={labelName} onclick={handleClick} variant="brand"></lightning-button>
+    </lightning-card>
+
+    <lightning-card title="Message">
+        <template if:true={flag}>
+            <p> Inside True block</p>
+        </template>
+
+        <template if:false={flag}>
+            <p> Inside False Block </p>
+        </template>
+    </lightning-card>
+
+</template>

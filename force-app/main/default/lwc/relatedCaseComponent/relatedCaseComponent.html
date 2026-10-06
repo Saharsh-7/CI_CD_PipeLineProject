@@ -6,11 +6,16 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card title = "Related Casese">
+    <lightning-card title = "Related Case">
         <lightning-datatable
-        key-field="Id"
-        data={data}
-        column = {columns}
+        key-field="id"
+        data={columnData}
+        columns = {column}
+        show-row-number-column
+        row-number-offset={rowOffset}
+        suppress-bottom-bar
+        draft-values={draftValues}
+
         >
     </lightning-datatable>
     </lightning-card>
