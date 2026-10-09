@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Carousal Using For Each Loop & Static Resource">
+        <div class="slds-size_3-of-4">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+            <lightning-carousel>
+                <template for:each = {imageArray} for:item="item">
+                    <lightning-carousel-image 
+                    key={item.id} 
+                    src = {item.src} 
+                    header = {item.header} 
+                    description = {item.description}
+                    alternative-text = "Test"
+                    href = {item.href}>
+                </lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+        </div>
+    </div>
+    </lightning-card>
+</template>

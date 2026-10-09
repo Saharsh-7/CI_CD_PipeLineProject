@@ -1,0 +1,28 @@
+<template>
+    <!-- Record Form Default Mode -->
+    
+    <!-- <lightning-card title="Lightning Record Form in Default Mode">
+        <lightning-record-form 
+        object-api-name={objectApiName} record-id={recordId} 
+        fields = {fields}
+        columns="2"
+        layout-type="Compact"
+        ></lightning-record-form>
+    </lightning-card> -->
+
+    <!-- Record Form Edit Mode-->
+     <lightning-card title="Record Form in Edit Mode">
+        <lightning-record-edit-form object-api-name = {objectApiName}
+        record-id={recordId}
+        columns="2"
+        layout-type="Compact"
+        mode="edit"
+        onsuccess={handlesuccess}
+        >
+            <lightning-input-field field-name={accountName}></lightning-input-field>
+            <lightning-input-field field-name={annualRevenueField}></lightning-input-field>
+            <lightning-input-field field-name = {PhoneField}></lightning-input-field>
+        </lightning-record-edit-form>
+     </lightning-card>
+
+</template>

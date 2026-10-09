@@ -1,4 +1,4 @@
-import { LightningElement, wire,track } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import getPatientDetails from '@salesforce/apex/PatientController.getPatientDetails';
 
 export default class WireDemo extends LightningElement {
@@ -13,7 +13,7 @@ export default class WireDemo extends LightningElement {
         { label: 'Date of Birth', fieldName: 'Date_of_Birth__c' }
     ];
 
-    @track datas = [];
+    datas = [];
 
     @wire(getPatientDetails)
     wirePatientDetails({ data, error }) {

@@ -16,7 +16,7 @@ export default class ComboboxBasic extends LightningElement {
             let arr = [];
             for(let i = 0; i < result.length; i++){
                 arr.push({label : result[i].Name, value : result[i].Id});
-                //arr.push({label: result[i].First_Name__c, value : result[i].First_Name__c})
+                arr.push({label: result[i].First_Name__c, value : result[i].First_Name__c})
             }
             this.optionsArray = arr; 
         })

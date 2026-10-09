@@ -1,0 +1,13 @@
+<template>
+   <lightning-card title = "Record Edit Form">
+        <lightning-record-edit-form object-api-name = {objectApiName}  record-id={recordId} onsuccess={handleSucess} onerror={handlerror}>
+            <lightning-input-field field-name={SerialNumber}></lightning-input-field>
+            <lightning-input-field field-name={ClinicName}></lightning-input-field>
+            <lightning-input-field field-name={ClinicRegion}></lightning-input-field>
+            <lightning-input-field field-name={TimeZone}></lightning-input-field>
+
+            <lightning-button variant="brand" type="submit" label="Save" ></lightning-button>
+ 
+        </lightning-record-edit-form>
+   </lightning-card>
+</template>
