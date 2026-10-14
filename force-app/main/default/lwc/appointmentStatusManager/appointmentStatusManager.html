@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Appointment Status Picklist Manager" icon-name="standard:calibration">
+        <div class="slds-p-around_medium slds-is-relative">
+            
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+            </template>
+
+            <!-- Dropdown with '+ Add New Status...' inside the options list -->
+            <lightning-combobox
+                name="statusPicklist"
+                label="Available Status Values"
+                value={selectedStatus}
+                placeholder="Select a Status"
+                options={picklistOptions}
+                onchange={handleSelectionChange}>
+            </lightning-combobox>
+
+            <!-- Input and Button (Visible only when user selects '+ Add New Status...' from dropdown) -->
+            <template if:true={showAddInput}>
+                <div class="slds-grid slds-gutters_x-small slds-grid_vertical-align-end slds-m-top_medium">
+                    <div class="slds-col slds-grow">
+                        <lightning-input
+                            type="text"
+                            label="Add New Status Value"
+                            placeholder="Enter new picklist value..."
+                            value={newStatus}
+                            onchange={handleStatusChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-no-flex">
+                        <lightning-button
+                            variant="brand"
+                            label="Add Value"
+                            onclick={handleAddStatus}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col slds-no-flex">
+                        <lightning-button-icon
+                            icon-name="utility:close"
+                            variant="border-filled"
+                            alternative-text="Cancel"
+                            title="Cancel"
+                            onclick={handleCancelAdd}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
